@@ -1,0 +1,122 @@
+table{
+	width: 30%;
+	color: black;
+}
+element.style{
+	display: grid;
+	grid-auto-columns: repeat(4, 1fr);
+}
+table td a{
+	display: block; 
+	height: 100%;
+	color: black;
+	text-decoration: none;
+}
+.grid{
+	background-color: indianred;
+	display: grid;
+	justify-content: space-between;
+	grid-template-areas: 
+	"header_left . header_right"
+	". . main_right"
+	"footer_left . . ";
+}
+.lgr{
+	font-weight: bold;
+	font-size: 20pt;
+	grid-area: header_left;
+	grid-column: 1/3;
+	grid-row: 1/3;
+}
+.rgr1{
+	font-weight: bold;
+	grid-area: header_right;
+	justify-self: end;
+}
+.rgr2{
+	grid-area: main_right;
+	justify-self: end;
+}
+.bot_gr{
+	font-weight: bold;
+	grid-area: footer_left;
+}
+.container{
+	background-color: indianred;
+	display: flex;
+	flex-direction: column;
+	
+}
+.container1{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.rgr11{
+	text-align: right;
+}
+.red{
+	background-color: indianred;
+}
+.yellow{
+	background-color: yellow;
+}
+.blue{
+	background-color: lightblue;
+}
+
+.bot{
+	font-weight: bold;
+	text-align: left;
+	margin-left: 0;
+	width: 100%;
+}
+.lt{
+	font-weight: bold;
+	font-size: 20pt;
+	text-align: left;
+	margin-left: 0;
+	width: 50%;
+	float: left;
+}
+.rt1{
+	font-weight: bold;
+	text-align: right;
+	margin-right: 0;
+	width: 30%;
+	float: right;
+}
+.rt2{
+	text-align: right;
+	margin-right: 0;
+	width: 50%;
+	float: right;
+}
+.bot-blue{
+	font-weight: bold;
+	text-align: right;
+	margin-left: 0;
+	width: 100%;
+}
+.rt-blue{
+	font-weight: bold;
+	font-size: 20pt;
+	text-align: right;
+	margin-right: 0;
+	width: 70%;
+	float: right;
+}
+.lt-blue1{
+	font-weight: bold;
+	text-align: left;
+	margin-left: 0;
+	width: 30%;
+	float: left;
+}
+.lt-blue2{
+	text-align: left;
+	margin-left: 0;
+	width: 30%;
+	float: left;
+}
+
