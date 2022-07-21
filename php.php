@@ -237,7 +237,7 @@
 
 <?php
 	$array=[];
-	$N=mt_rand(-100,100);
+	$N=mt_rand(1,100);
 	$min=100;
 	$max=-100;
 	$i=0;
@@ -277,7 +277,7 @@
 			["name" => "Bill", "math" => mt_rand(2,5), "phys" => mt_rand(2,5), "chem" => mt_rand(2,5), "inf" => mt_rand(2,5)],
 		];
 		$Sum=0;
-		$i=0;
+		$i=$m=$p=$c=0;
 		foreach ($marks as $values) {
 			foreach ($values as $key => $value) {
 				echo " $value ";
@@ -338,7 +338,7 @@ echo "<br>";
 	$array=[[]];
 	$temp=[];
 	$res=1;
-	$temp=$array[1];
+	//$temp=$array[1];
 	$count=1;
 	for ($i=0;$i<5;$i++){
 		for ($j=0;$j<6;$j++){
@@ -398,7 +398,7 @@ echo "<br>";
 ?>
 <?php
 	echo "<br>";
-	$array=[3,5,6,7,3,3,3,5,3,5,5,6,5,5,5,5,8,9,0,3,5,3,5,3,5];
+	$array=[3,5,6,7,3,3,3,5,3,5,5,6,5,5,5,5,5,8,9,0,3,5,3,5,3,5];
 	$N=count($array);
 	echo $N;
 	echo "<br>";
@@ -407,7 +407,7 @@ echo "<br>";
 	for ($i=0;$i<$N;$i++){
 			echo " $array[$i]";
 		}
-	for ($i=0;$i<$N;$i++){	
+	for ($i=1;$i<$N;$i++){	
 			if($array[$i]==$array[$i-1]){
 			$count++;
 			} else { 
