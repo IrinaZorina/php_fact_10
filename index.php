@@ -40,13 +40,40 @@
 			$gridBack="#3b444b";
 			$fontColor="white";
 		}	
-
 	echo '<section class="grid2" style="background-color:'.$gridBack.'; color: '.$fontColor.'">';
 ?>
 	<div class="photo"><img class="img" src="images/photo.jpg"></div>
-	<div class="name"><div class="Text1"><b style="border:3px #ff00ff  dotted">Травников Тимур</b></div></div>
-	<div class="info"><div class="Text2"><i>Привет! Немного обо мне:<br> Окончил магистратуру по направлению "Инфокоммуникационные технологии и системы связи". Первым местом работы была библиотека университета. Затем трудился в районном информационно-методическом центре. На данном этапе жизни работаю инженером в учреждении дополнительного образования детей. В свободное время путешествую, гуляю, смотрю кино, занимаюсь спортом и пытаюсь выспаться</i> &#128521.</div></div>
-	<div class="feedback"><div class="Text3"><i>Отличное начало курса! Пока трудно вспоминать нужные тэги, но понимаю, что это из-за нехватки практики. Предлагаю уделить ещё раз отдельное внимание отступам. Мне кажется, эта тема требует закрепления. Общее впечатление на данный момент исключительно позитивное. Спасибо!</i></div></div>
+	<div class="name"><div class="Text1"><b style="border:3px #ff00ff  dotted">Травников Тимур</b><br>
+		<?php
+			$date1 = date_create_from_format('Y-m-d', '1996-02-20');
+			$date2 = date_create_from_format('Y-m-d', date('Y-m-d'));
+			$diff = (array) date_diff($date1, $date2);
+			echo $diff['days']." дней со дня рождения";
+		?>
+	</div></div>
+	<div class="info"><div class="Text2"><i>
+		
+		<?php
+		$strInfo="Привет! Немного обо мне:<br> Окончил магистратуру по направлению \"Инфокоммуникационные технологии и системы связи\". Первым местом работы была библиотека университета. Затем трудился в районном информационно-методическом центре. На данном этапе жизни работаю инженером в учреждении дополнительного образования детей. В свободное время путешествую, гуляю, смотрю кино, занимаюсь спортом и пытаюсь выспаться";
+		$arrayInfo=explode("!", $strInfo);
+		echo "<span style='color:#ff00ff'>$arrayInfo[0]!</span>$arrayInfo[1]";
+		?>
+	</i> &#128521.</div></div>
+	<div class="feedback"><div class="Text3"><i>
+		<?php
+                $str = 'Отличное начало курса! Пока трудно вспоминать нужные тэги, но понимаю, что это из-за нехватки практики. Предлагаю уделить ещё раз отдельное внимание отступам. Мне кажется, эта тема требует закрепления. Общее впечатление на данный момент исключительно позитивное. Спасибо!';
+                $a = explode(" ", $str);
+                foreach ($a as $key => $value){
+                    if (($key % 2) == 0){
+                        $value = '<span style ="color: ff00ff">' . $value ." " . '</span>';
+                            echo $value;
+                    }
+                    else{
+                        $value = '<span style ="color: #808000">' . $value ." ". '</span>';
+                            echo $value;
+                    }
+                }
+                ?></i></div></div>
 </section>
 <div class="container1">
 	<div class="container11">
@@ -120,5 +147,24 @@
 			</div>
 		</div>
 	</div>	
+	
+<footer>  
+<?php
+echo "<br>";
+$str = file_get_contents('index.php');
+//echo str_word_count($str);
+$str = preg_replace("/[a-zA-Z]/i", "", $str);
+$str = str_replace(array('-'),'',$str);
+$str = str_replace(array("'"),'',$str);
+$tempWords=str_word_count($str, 1, "АаБбВвГгДдЕеЁёЖжЗзИиЙйКкЛлМмНнОоПпРрСсТтУуФфХхЦцЧчШшЩщЪъЫыЬьЭэЮюЯя");
+//print_r (str_word_count($str, 1, "АаБбВвГгДдЕеЁёЖжЗзИиЙйКкЛлМмНнОоПпРрСсТтУуФфХхЦцЧчШшЩщЪъЫыЬьЭэЮюЯя"));
+$countVowel = preg_match_all('/[АаЕеЁёИиОоУуЫыЭэЮюЯя]/i', $str);
+echo $countVowel." гласных на сайте";
+echo "<br>";
+echo count($tempWords)." слов на сайте";
+echo "<br>";
+?>
+
+</footer> 
 </body>
 </html>

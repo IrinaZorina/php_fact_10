@@ -397,7 +397,7 @@ echo "<br>";
 	echo "Элементов в массиве: $count<br>Элементов в каждой строке: $y<br>Элементов в каждом стобце: $x<br>";
 ?>
 <?php
-	echo "<br>";
+/*	echo "<br>";
 	$array=[3,5,6,7,3,3,3,5,3,5,5,6,5,5,5,5,5,8,9,0,3,5,3,5,3,5];
 	$N=count($array);
 	echo $N;
@@ -422,7 +422,102 @@ echo "<br>";
 		}
 	}
 	echo "<br>";
-	echo $max;
+	echo $max;*/
 ?>
+
+<?php 
+//Дана строка «fact». Привести строку к виду «Fact».
+	echo "<br>";
+	$str='fact';
+	echo ucfirst($str);
+	echo "<br>";
+	$str[0]='F';
+	echo $str;
+?>
+<?php 
+//Дана строка, в которой содержится «фамилия, имя, отчество». Преобразовать строку к виду «имя, фамилия». Например, исходная строка «Закирова Регина Артуровна», результирующая «Регина Закирова».
+	echo "<br>";
+	$str='Травников Тимур Сергеевич';
+	echo mb_substr($str, 10, 15, 'UTF-8');
+	echo "<br>";
+?>
+<?php
+//Дана строка «Привет, мир». Найти количество символа «и» в строке (регистр учитывать). 
+	echo "<br>";
+	$str='Привет, мир';
+	echo substr_count($str, 'и');
+	echo "<br>";
+?>
+<?php
+//Дана строка ‘html css php'. Вырежьте из нее и выведите на экран слово 'html', слово 'css' и слово 'php'.
+	echo "<br>";
+	$str='html css php';
+	$array=explode(" ", $str);
+	echo $array[0];
+	echo "<br>";
+	echo $array[1];
+	echo "<br>";
+	echo $array[2];
+	echo "<br>";
+?>
+<?php
+//Дана строка. Проверьте, что она заканчивается на '.png'. Если это так, выведите 'да', если не так - 'нет'.
+	echo "<br>";
+	$png=".png";
+	$str='html css php.pg';
+	$array=substr($str, -4);
+	if($array==$png){
+		echo "Да.";
+	} else {
+		echo "Нет.";
+	}
+	echo "<br>";
+?>	
+<?php
+//Дана строка. Если в этой строке более 5-ти символов - вырежете из нее первые 5 символов, добавьте троеточие в конец и выведите на экран. Если же в этой строке 5 и менее символов - просто выведите эту строку на экран.
+	echo "<br>";
+	$str='html css php.pg';
+	if(strlen($str)>5){
+		echo substr($str,0,5)."...";
+	} else {
+		echo $str;
+	}
+	
+	echo "<br>";
+?>
+<?php
+//Дана строка $str. Замените в ней все буквы 'a' на цифру 1, буквы 'b' - на 2, а буквы 'c' - на 3.
+	echo "<br>";
+	$png=".png";
+	$str='abc abc abc';
+	$symbols=['a','b','c'];
+	$numbers=['1','2','3'];
+	$temp=str_replace($symbols, $numbers, $str);
+	echo $temp;
+	echo "<br>";
+?>
+<?php
+//Дана строка 'abc abc abc'. Определите позицию последней буквы 'b'.
+	echo "<br>";
+	$png=".png";
+	$str='abc abc abc';
+	$symbol='b';
+	echo strrpos($str, $symbol,-1);
+	echo "<br>";
+?>
+<?php
+//Дана строка 'html css php'. С помощью функции explode запишите каждое слово этой строки в отдельный элемент массива.
+	echo "<br>";
+	$str='html css php';
+	$array=explode(" ", $str);
+	echo $array[0];
+	echo "<br>";
+	echo $array[1];
+	echo "<br>";
+	echo $array[2];
+	echo "<br>";
+?>
+
+
 </body>
 </html>
